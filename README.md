@@ -9,7 +9,7 @@ The ng serve command launches the server, watches our files, and rebuilds the ap
 
 # Project File Review
 SRC FOLDER
-app/app.component.{ts,html,css,spec.ts}
+app/app.component.{ts,html,css,spec.ts}	
 Defines the AppComponent along with an HTML template, CSS stylesheet and a unit test. It is the root component of what will become a tree of nested components as the application evolves.
 
 app/app.module.ts	
