@@ -6,11 +6,13 @@
   <link rel="stylesheet" type="text/css" href="app/app.component.css">
 </head>
 <body>
+<router-outlet>
 <div id="header">
   <div>
     <div id="logo">
       <a href="app.component.html"><img src="../images/logo.png" alt="Logo"></a>
     </div>
+    <nav>
     <ul>
       <li class="home current">
         <a href="app.component.html"><span>Home</span></a>
@@ -19,12 +21,14 @@
         <a href="app.component.html"><span>Products</span></a>
       </li>
       <li class="about">
-        <a href="app.component.html"><span>About</span></a>
+        <a href="app.component.html"><span>My Profile</span></a>
       </li>
       <li class="blog">
-        <a href="app.component.html"><span>Blog</span></a>
+        <a routerLink="/login" routerLinkActive="active"><span>Login</span></a>
+
       </li>
     </ul>
+    </nav>
   </div>
   <div>
     <div id="figure">
@@ -88,5 +92,6 @@
     &copy; Copyright 2012. All rights reserved.
   </p>
 </div>
+</router-outlet>
 </body>
 </html>
