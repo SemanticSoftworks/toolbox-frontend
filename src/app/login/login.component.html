@@ -39,11 +39,11 @@
           <div>
             <div id="article">
                 <h2>Login</h2>
-                <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                <form name="form">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                    <input type="text" class="form-control" name="username"/>
                     <p><label>Password</label>
-                    <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required /></p>
+                    <input type="password" class="form-control" name="password"/></p>
                     <p><button [disabled]="loading" class="btn btn-primary">Login</button>
                     <button [disabled]="loading" class="btn btn-link">Register</button></p>
                 </form>
