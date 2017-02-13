@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "../login/login.component";
+import {LoginComponent} from "./login/login.component";
+import {HomeComponent} from "./home/home.component";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     LoginComponent
   ],
   imports: [
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

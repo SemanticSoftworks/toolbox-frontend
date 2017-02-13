@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login.component';
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import {LocationStrategy, HashLocationStrategy} from "@angular/common";
     FormsModule,
     HttpModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [LoginComponent]
 })
 export class LoginModule { }

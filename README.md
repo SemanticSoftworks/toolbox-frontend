@@ -12,7 +12,7 @@ SRC FOLDER
 app/app.component.{ts,html,css,spec.ts}	
 Defines the AppComponent along with an HTML template, CSS stylesheet and a unit test. It is the root component of what will become a tree of nested components as the application evolves.
 
-app/app.module.ts	
+app/home.module.ts	
 Defines AppModule, the root module that tells Angular how to assemble the application. Right now it declares only the AppComponent. Soon there will be more components to declare.
 
 assets/*	
