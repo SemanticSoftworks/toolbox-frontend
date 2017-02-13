@@ -8,10 +8,7 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   constructor(public router: Router) {
-  }
-
-  navigate() { // Called by (click)= on element in .html
-    this.router.navigate(['/login']);
+    router.navigate(["home"]);
   }
   title = 'app works';
 }
