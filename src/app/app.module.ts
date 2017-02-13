@@ -22,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
