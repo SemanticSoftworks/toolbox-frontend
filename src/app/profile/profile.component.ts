@@ -9,9 +9,14 @@ import {Router} from "@angular/router";
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  redirect() {
+    this.router.navigate(['./profile']);
+  }
+  ngOnInit(): void {
+  }
   title = 'app works';
 }
