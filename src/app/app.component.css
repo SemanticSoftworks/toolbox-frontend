@@ -1,8 +1,4 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
+/* Website template by freewebsitetemplates.com */
 body {
   background: url(../images/bg-body.jpg) repeat left top;
   color: #515151;
@@ -83,7 +79,7 @@ p a:hover {
   position: absolute;
   top: 0;
 }
-#header div:first-child ul li.login {
+#header div:first-child ul li.blog {
   left: 830px;
   position: absolute;
   top: 0;
@@ -120,6 +116,7 @@ p a:hover {
   z-index: 1;
 }
 #header div div#figure {
+  background: url(../images/livemusic.png) no-repeat;
   height: 410px;
   position: relative;
 }
