@@ -12,13 +12,20 @@ import { ProfileComponent } from "./profile/profile.component";
 import { AlertComponent } from "./directives/index";
 import { AlertService, AuthenticationService, UserService } from "./services/index";
 import { AuthGuard } from "./guards/index";
+import { RegisterComponent } from './register/index';
+
+// used to create fake backend
+import { fakeBackendProvider } from './helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'products', component: ProductsComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -28,7 +35,8 @@ const appRoutes: Routes = [
     LoginComponent,
     ProductsComponent,
     ProfileComponent,
-    AlertComponent
+    AlertComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,12 @@ const appRoutes: Routes = [
     AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
+
+    // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent]
 })
