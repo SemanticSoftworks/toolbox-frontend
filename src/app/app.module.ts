@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+//Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'products', component: ProductsComponent},
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent}
 ];
 
