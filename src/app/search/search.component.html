@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Searching...</title>
+  <link rel="stylesheet" type="text/css" href="app/search/search.component.css">
+</head>
+<body>
+  <div id="header">
+    <div>
+      <div id="logo">
+        <a href="home"><img src="../images/logo.png" alt="Logo"></a>
+      </div>
+      <ul>
+        <li class="home">
+          <a href="home"><span>Home</span></a>
+        </li>
+        <li class="products current">
+          <a href="search"><span>Search</span></a>
+        </li>
+        <li class="about">
+          <a href="profile"><span>My Profile</span></a>
+        </li>
+        <li class="login">
+          <a href="login"><span>Login</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="body">
+    {{getAllAds()}}
+  </div>
+</body>
+</html>

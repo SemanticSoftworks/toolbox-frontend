@@ -12,12 +12,14 @@ import { ProfileComponent } from "./profile/profile.component";
 import { AlertComponent } from "./directives/index";
 import { AlertService, AuthenticationService, UserService } from "./services/index";
 import { AuthGuard } from "./guards/index";
+import {SearchComponent} from "./search/search.component";
+import {SearchService} from "./services/search.service";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'products', component: ProductsComponent},
+  { path: 'search', component: SearchComponent},
   { path: 'profile', component: ProfileComponent}
 ];
 
@@ -26,7 +28,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ProductsComponent,
+    SearchComponent,
     ProfileComponent,
     AlertComponent
   ],
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
