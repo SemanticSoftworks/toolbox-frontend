@@ -149,11 +149,24 @@ p a:hover {
   margin: 0;
   text-transform: uppercase;
 }
-#header div span#background {
+#header div span#background-login {
   background: url(../../images/login.png) no-repeat center top;
   display: block;
   height: 139px;
 }
+
+#header div span#background-register {
+  background: url(../../images/register.png) no-repeat center top;
+  display: block;
+  height: 188px;
+}
+
+#header div span#background {
+  background: url(../../images/bg-blue.png) no-repeat center top;
+  display: block;
+  height: 101px;
+}
+
 #body {
   margin: -40px 0 0;
 }
