@@ -11,8 +11,8 @@ export class AuthenticationService {
   constructor(private http: Http) { }
 
   login(username: string, password: string) {
-    return this.http.post('/api/authenticate', JSON.stringify({ username: username, password: password }))
-      .map((response: Response) => {
+    return this.http.post('localhost:8090/user/login', JSON.stringify({ username: username, password: password }))
+      .map((response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
         if (user && user.token) {
