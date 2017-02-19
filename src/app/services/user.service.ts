@@ -12,7 +12,7 @@ export class UserService {
   login(username: string, password: string) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:8091/user/login', JSON.stringify({ username: username, password: password }),options)
+    return this.http.post('http://smuts.noip.me:8090/user/login', JSON.stringify({ username: username, password: password }),options)
       .map((response: Response) => response.json());
   }
 
