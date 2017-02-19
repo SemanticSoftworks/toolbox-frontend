@@ -34,8 +34,8 @@ export let fakeBackendProvider = {
               body: {
                 id: user.id,
                 username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
+                firstname: user.firstname,
+                lastname: user.lastname,
                 adress: user.adress,
                 email: user.email,
                 token: 'fake-jwt-token'

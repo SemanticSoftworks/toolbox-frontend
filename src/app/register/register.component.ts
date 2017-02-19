@@ -19,9 +19,10 @@ export class RegisterComponent {
 
   register() {
     this.loading = true;
-    this.userService.create(this.model)
+    this.userService.register(this.model)
       .subscribe(
         data => {
+          console.log("registered..");
           this.alertService.success('Registration successful', true);
           this.router.navigate(['/login']);
         },

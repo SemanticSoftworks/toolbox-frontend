@@ -11,7 +11,7 @@ import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { AlertComponent } from "./directives/index";
-import { AlertService, AuthenticationService, UserService } from "./services/index";
+import { AlertService, UserService } from "./services/index";
 import { AuthGuard } from "./guards/index";
 import { RegisterComponent } from './register/index';
 
@@ -48,7 +48,6 @@ const appRoutes: Routes = [
   providers: [
     AuthGuard,
     AlertService,
-    AuthenticationService,
     UserService,
 
     // providers used to create fake backend
