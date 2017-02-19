@@ -1,8 +1,6 @@
 # Create image based on the official Node 6 image from dockerhub
 FROM node:6
 
-EXPOSE 4200
-
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
 
@@ -13,10 +11,13 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 
 # Install dependecies
+RUN npm install -g angular-cli
 RUN npm install
 
 # Get all the code needed to run the app
 COPY . /usr/src/app
+
+EXPOSE 4200
 
 # Serve the app
 CMD ["npm", "start"]
