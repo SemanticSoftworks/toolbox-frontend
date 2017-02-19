@@ -20,6 +20,9 @@ import { fakeBackendProvider } from './helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
+// services
+import {AdService} from './services/ad.service'
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -50,6 +53,7 @@ const appRoutes: Routes = [
     AlertService,
     AuthenticationService,
     UserService,
+    AdService,
 
     // providers used to create fake backend
     //fakeBackendProvider,

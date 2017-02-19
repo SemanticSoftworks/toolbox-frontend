@@ -32,6 +32,15 @@
     <span id="background"></span>
   </div>
 </div>
+
+<!-- in progress -->
+<div id="dynamicBody">
+  <div *ngFor="let ad of ads">
+    <h3>{{ad.title}}</h3>
+    <p>{{ad.description}}</p>
+  </div>
+</div>
+
 <div id="body">
   <div>
     <div>
