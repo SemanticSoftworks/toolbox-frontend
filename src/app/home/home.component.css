@@ -93,6 +93,11 @@ p a:hover {
   position: absolute;
   top: 0;
 }
+#header div:first-child ul li.logout {
+  left: 830px;
+  position: absolute;
+  top: 0;
+}
 #header div:first-child ul li a {
   display: block;
   color: #FFFFFF;

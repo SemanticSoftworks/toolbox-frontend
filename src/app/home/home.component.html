@@ -13,17 +13,20 @@
     </div>
     <nav>
       <ul>
-        <li class="home current">
+        <li class="home current" *ngIf="online">
           <a href="home"><span>Home</span></a>
         </li>
-        <li class="products">
+        <li class="products" *ngIf="online">
           <a href="products"><span>Products</span></a>
         </li>
-        <li class="about">
-          <a href="profile"><span>My Profile</span></a>
+        <li class="about" *ngIf="online">
+          <a href="profile"><span>{{username}}</span></a>
         </li>
-        <li class="login">
+        <li class="login" *ngIf="!online">
           <a href="login"><span>Login</span></a>
+        </li>
+        <li class="logout" *ngIf="online">
+          <a href="" (click)="logout()"><span>Logout</span></a>
         </li>
       </ul>
     </nav>

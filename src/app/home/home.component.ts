@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { UserService } from '../services/index';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,23 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   username: string;
+  online: boolean;
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.username = localStorage.getItem('currentUser');
+    let a = JSON.parse(localStorage.getItem('currentUser'));
+    if(a != null) {
+      console.log(a);
+      this.username = a.username;
+      this.online = this.username != null && this.username.length > 0;
+    } else {
+      this.online = false;
+    }
+  }
+
+  logout() {
+    this.userService.logout();
   }
 
   title = 'home works';
