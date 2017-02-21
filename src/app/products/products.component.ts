@@ -53,18 +53,6 @@ export class ProductsComponent {
   title = 'Products';
 }
 
-/*
-
-interface Ad {
-  adId: number,
-  userId: number,
-  category: string, // 4 now
-  title: string,
-  description: string,
-  duration: string
-}
-*/
-
 export class Ad {
   adId: number;
   userId: number;
