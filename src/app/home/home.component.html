@@ -17,7 +17,7 @@
           <a href="products"><span>Products</span></a>
         </li>
         <li class="profile" *ngIf="online">
-          <a href="profile"><span>{{username}}</span></a>
+          <a href="profile"><span>{{currentUser.username}}</span></a>
         </li>
         <li class="login" *ngIf="!online">
           <a href="login"><span>Login</span></a>

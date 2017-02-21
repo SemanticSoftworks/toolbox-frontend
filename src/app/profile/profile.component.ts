@@ -10,9 +10,9 @@ import {User} from "../models/user";
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
+
 export class ProfileComponent implements OnInit{
   currentUser: User;
-  users: User[] = [];
 
   constructor(private userService: UserService) {
     //Should not be in here if not logged in.
@@ -20,10 +20,7 @@ export class ProfileComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.loadAllUsers();
-  }
-
-  private loadAllUsers() {
 
   }
+
 }

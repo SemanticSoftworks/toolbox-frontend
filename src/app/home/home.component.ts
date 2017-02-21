@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { UserService } from '../services/index';
+import {User} from "../models/user";
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,16 @@ import { UserService } from '../services/index';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
+  currentUser: User;
   username: string;
   online: boolean;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    let a = JSON.parse(localStorage.getItem('currentUser'));
-    if(a != null) {
-      console.log(a);
-      this.username = a.username;
-      this.online = this.username != null && this.username.length > 0;
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if(this.currentUser != null) {
+      this.online = true;
     } else {
       this.online = false;
     }
