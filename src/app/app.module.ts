@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
+import { ProductDetailsComponent } from "./products/product-details.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { AlertComponent } from "./directives/index";
 import { AlertService, AuthenticationService, UserService } from "./services/index";
@@ -23,11 +24,15 @@ import { BaseRequestOptions } from '@angular/http';
 // services
 import {AdService} from './services/ad.service'
 
+// routing
+//import {routing} from './app.routes';
+
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},  
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'products', component: ProductsComponent},
+  { path: 'product-details/:id', component: ProductDetailsComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent}
 ];
@@ -38,6 +43,7 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     ProductsComponent,
+    ProductDetailsComponent,
     ProfileComponent,
     AlertComponent,
     RegisterComponent
@@ -47,6 +53,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
+    //routing
   ],
   providers: [
     AuthGuard,

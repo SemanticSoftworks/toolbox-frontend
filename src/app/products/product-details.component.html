@@ -37,61 +37,17 @@
     <div>
       <div>
         <div>
-<!-- tst
-  <div *ngFor="let ad of ads">
-    <h3>{{ad.title}}</h3>
-    <p>{{ad.description}}</p>
-  </div>
-</div>
--->
-        <div id="dynamicBody">
-            <ul class="ad">
-              <li *ngFor="let ad of ads"
-                [class.selected]="ad === selectedAd"
-                (click)="onSelect(ad)">
-                <img src="images/headphone5.png" alt="Image">
-                <a [routerLink]="['/product-details', ad.adId]">
-                <span class="badge"></span> {{ad.title}}
-                </a>
-              </li>
-            </ul>
-            <div *ngIf="selectedAd">
-              <a [routerLink]="['/product-details', selectedAd.adId]">              
-              <h2>{{selectedAd.title}} details!</h2>
-              </a>
-              <div>
-                <label>Description: </label>{{selectedAd.description}}
-                <label>Category: </label>{{selectedAd.category}}
-              </div>
-            </div>
-        </div>
-        
-          <ul>
-            <li>
-              <a href="products"><img src="images/headphone4.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone5.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone6.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone7.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone8.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone9.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-          </ul>
+          <div *ngIf="detailedAd">
+            <h2>{{detailedAd.title}}</h2>
+
+            <img src="images/headphone5.png" alt="Image">
+
+            <label>Price: </label> <p></p>
+            <label>Description:</label> <p>{{detailedAd.description}}</p>
+            <label>Duration: </label> <p>{{detailedAd.duration}}</p>
+            <label>Category: </label> <p>{{detailedAd.category}}</p>
+            <label>Accepted payments: </label> <p></p>
+          </div>
         </div>
       </div>
     </div>

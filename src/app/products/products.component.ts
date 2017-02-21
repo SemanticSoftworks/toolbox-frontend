@@ -7,7 +7,6 @@ import {AdService} from '../services/ad.service'
 
 @Component({
   selector: 'products-root',
-  //selector: 'app-root',
   templateUrl: './products.component.html',
   /*
   template: `
