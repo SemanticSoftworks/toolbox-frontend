@@ -10,13 +10,13 @@
   <div>
     <nav>
       <ul>
-        <li class="home current" *ngIf="online">
+        <li class="home" *ngIf="online">
           <a href="home"><span>Home</span></a>
         </li>
         <li class="products" *ngIf="online">
           <a href="products"><span>Products</span></a>
         </li>
-        <li class="about" *ngIf="online">
+        <li class="profile" *ngIf="online">
           <a href="profile"><span>{{username}}</span></a>
         </li>
         <li class="login" *ngIf="!online">
