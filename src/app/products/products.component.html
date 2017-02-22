@@ -37,36 +37,18 @@
     <div>
       <div>
         <div>
-<!-- tst
-  <div *ngFor="let ad of ads">
-    <h3>{{ad.title}}</h3>
-    <p>{{ad.description}}</p>
-  </div>
-</div>
--->
-        <div id="dynamicBody">
-            <ul class="ad">
-              <li *ngFor="let ad of ads"
-                [class.selected]="ad === selectedAd"
-                (click)="onSelect(ad)">
-                <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">
-                <a [routerLink]="['/product-details', ad.adId]">
-                <span class="badge"></span> {{ad.title}}
-                </a>
-              </li>
-            </ul>
-            <div *ngIf="selectedAd">
-              <a [routerLink]="['/product-details', selectedAd.adId]">              
-              <h2>{{selectedAd.title}} details!</h2>
-              </a>
-              <div>
-                <label>Description: </label>{{selectedAd.description}}
-                <label>Category: </label>{{selectedAd.category}}
-              </div>
-            </div>
-        </div>
-        
-          
+          <div id="dynamicBody">
+              <ul class="ad">
+                <li *ngFor="let ad of ads"
+                  [class.selected]="ad === selectedAd"
+                  (click)="onSelect(ad)">
+                  <a [routerLink]="['/product-details', ad.adId]">
+                  <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">                  
+                  <span class="badge"></span> {{ad.title}}
+                  </a>
+                </li>
+              </ul>
+          </div>
         </div>
       </div>
     </div>

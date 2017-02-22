@@ -3,12 +3,15 @@ import {Router} from "@angular/router";
 import {AdService} from '../services/ad.service'
 import { ActivatedRoute } from '@angular/router';
 
+import { Ad } from './products.component';
+
 @Component({
   selector: 'product-details',
   templateUrl: './product-details.component.html',
   providers: [AdService],
   styleUrls: ['./products.component2.css'],
 })
+
 export class ProductDetailsComponent {
   detailedAd: Ad;
   id: number;
@@ -31,14 +34,4 @@ export class ProductDetailsComponent {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-}
-
-// Q: access from products Component ?
-export class Ad { 
-  adId: number;
-  category: string; // 4 now  
-  description: string;
-  duration: string;
-  title: string;
-  userId: number;
 }

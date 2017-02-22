@@ -8,28 +8,6 @@ import {AdService} from '../services/ad.service'
 @Component({
   selector: 'products-root',
   templateUrl: './products.component.html',
-  /*
-  template: `
-  <h1>{{title}}</h1>
-    <ul class="ad">
-      <li *ngFor="let ad of ads"
-        [class.selected]="ad === selectedAd"
-        (click)="onSelect(ad)">
-        <span class="badge">{{ad.adId}}</span> {{ad.title}}
-      </li>
-    </ul>
-    <div *ngIf="selectedAd">
-      <h2>{{selectedAd.title}} details!</h2>
-      <div><label>id: </label>{{selectedAd.adId}}</div>
-      <!--
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedAd.title" placeholder="title"/>
-      </div>
-      -->
-    </div>
-  `,
-  */
   providers: [AdService],
   styleUrls: ['./products.component2.css'],
 })
