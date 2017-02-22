@@ -21,11 +21,9 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'products', component: ProductsComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
-  { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

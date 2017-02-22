@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { UserService } from '../services/index';
-import {User} from "../models/user";
 
 @Component({
   selector: 'app-home',
@@ -8,23 +7,14 @@ import {User} from "../models/user";
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-  currentUser: User;
-  username: string;
-  online: boolean;
 
-  constructor(private userService: UserService) {}
 
-  ngOnInit(): void {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if(this.currentUser != null) {
-      this.online = true;
-    } else {
-      this.online = false;
-    }
+  constructor(private userService: UserService) {
+
   }
 
-  logout() {
-    this.userService.logout();
+  ngOnInit(): void {
+
   }
 
   title = 'home works';

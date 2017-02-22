@@ -8,30 +8,6 @@
 <body>
 <div id="header">
   <div>
-    <nav>
-      <ul>
-        <li class="home" *ngIf="online">
-          <a href="home"><span>Home</span></a>
-        </li>
-        <li class="products" *ngIf="online">
-          <a href="products"><span>Products</span></a>
-        <li class="home current">
-          <a href="home2"><span>Home</span></a>
-        </li>
-        <li class="products">
-          <a href="search"><span>Search</span></a>
-        </li>
-        <li class="profile" *ngIf="online">
-          <a href="profile"><span>{{currentUser.username}}</span></a>
-        </li>
-        <li class="login" *ngIf="!online">
-          <a href="login"><span>Login</span></a>
-        </li>
-        <li class="logout" *ngIf="online">
-          <a href="" (click)="logout()"><span>Logout</span></a>
-        </li>
-      </ul>
-    </nav>
   </div>
   <div>
     <div id="figure">

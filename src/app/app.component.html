@@ -6,6 +6,33 @@
   <link rel="stylesheet" type="text/css" href="app/app.component.css">
 </head>
 <body>
+<div id="header">
+  <ul>
+    <li><a href="home">Home</a></li>
+    <li><a href="products">Products</a></li>
+    <li><a href="search"><span>Search</span></a></li>
+    <li class="dropdown">
+      <a href="#drop">Dropdown</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </li>
+    <li class="login-logout" *ngIf="!online">
+      <a href="register"><span>Register</span></a>
+    </li>
+    <li class="login-logout" *ngIf="online">
+      <a href="" (click)="logout()"><span>Logout</span></a>
+    </li>
+    <li class="login-logout" *ngIf="!online">
+      <a href="login"><span>Login</span></a>
+    </li>
+    <li class="login-logout" *ngIf="online">
+      <a href="profile"><span>{{currentUser.username}}</span></a>
+    </li>
+  </ul>
+</div>
 <router-outlet></router-outlet>
 </body>
 </html>
