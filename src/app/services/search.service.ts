@@ -19,12 +19,12 @@ export class SearchService {
     console.log("Search request");
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://130.229.152.194:8090/ad/getpage/0').map((response: Response) => response.json());
+    return this.http.get('http://smuts.noip.me:8090/ad/getpage/0').map((response: Response) => response.json());
   }
 
   searchAds(query) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://130.229.152.194:8090/ad/search/' +query).map((response: Response) => response.json());
+    return this.http.get('http://smuts.noip.me:8090/ad/search/' +query).map((response: Response) => response.json());
   }
 }
