@@ -20,6 +20,7 @@ import {Ad} from "../models/ad";
 export class SearchComponent {
 
   list: Ad[];
+  textString : string;
 
   constructor(private router: Router, private http:Http, private searchService : SearchService) {
 
@@ -29,6 +30,15 @@ export class SearchComponent {
       //console.log('list' +x);
       }
       );
+  }
+
+  search(query) {
+    this.searchService.searchAds(query).subscribe(x => {
+        this.list = x;
+
+        //console.log('list' +x);
+      }
+    );
   }
 
   title = 'app wörks';
