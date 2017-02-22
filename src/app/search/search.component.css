@@ -41,7 +41,7 @@ p a:hover {
   z-index: 2;
 }
 #header div div#figure {
-  background: url(../images/livemusic.png) no-repeat;
+  background: url(../../images/livemusic.png) no-repeat;
   height: 410px;
   position: relative;
 }
@@ -402,4 +402,9 @@ p a:hover {
   margin: 30px auto 0;
   text-align: center;
   width: 260px;
+}
+#header div span#background-search {
+  background: url(../../images/search.png) no-repeat center top;
+  display: block;
+  height: 150px;
 }

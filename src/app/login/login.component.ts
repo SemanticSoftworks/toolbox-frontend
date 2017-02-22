@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
           data => {
             console.log("logged in");
             localStorage.setItem('currentUser', JSON.stringify(data));
-            this.router.navigate(['/home']);
+            window.location.href = '/home';
           },
           error => {
             alert(error);

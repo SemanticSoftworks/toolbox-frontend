@@ -41,7 +41,7 @@ p a:hover {
   z-index: 2;
 }
 #header div div#figure {
-  background: url(../images/livemusic.png) no-repeat;
+  background: url(../../images/livemusic.png) no-repeat;
   height: 410px;
   position: relative;
 }
@@ -154,9 +154,9 @@ p a:hover {
   text-transform: uppercase;
 }
 #header div span#background {
-  background: url(../../images/bg-blue.png) no-repeat center top;
+  background: url(../../images/products.png) no-repeat center top;
   display: block;
-  height: 101px;
+  height: 100px;
 }
 #body {
   margin: -40px 0 0;
