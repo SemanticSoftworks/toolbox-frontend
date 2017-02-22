@@ -4,9 +4,9 @@
 
 export class Ad {
   adId:number;
-  userId:number;
+  user:number;
   category:string;
-  title2:string;
+  title:string;
   description:string;
   duration:string;
 

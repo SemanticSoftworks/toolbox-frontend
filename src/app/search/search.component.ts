@@ -20,10 +20,14 @@ import {Ad} from "../models/ad";
 export class SearchComponent {
 
   list: Ad[];
+  ad: Ad[];
   constructor(private router: Router, private http:Http, private searchService : SearchService) {
 
-    this.searchService.getLatestAds().subscribe(x => {this.list = x});
-    console.log(this.list);
+    this.searchService.getLatestAds().subscribe(x => {
+      this.list = x;
+
+      console.log(x);}
+      );
   }
 
   title = 'app wörks';

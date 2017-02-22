@@ -19,6 +19,6 @@ export class SearchService {
     console.log("Search request");
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://130.229.128.245:8090/ad/search/testDescription').map((response: Response) => response.json());
+    return this.http.get('http://130.229.152.194:8090/ad/search/testDescription').map((response: Response) => response.json());
   }
 }

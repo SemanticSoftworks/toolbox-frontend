@@ -28,7 +28,20 @@
     </div>
   </div>
   <div id="body">
-    {{getAllAds()}}
+    <div>
+      <div>
+        <div>
+          <div>
+            <ul>
+              <li *ngFor="let ad of list">
+                title: {{ad.title}}
+                date: {{ad.duration}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
