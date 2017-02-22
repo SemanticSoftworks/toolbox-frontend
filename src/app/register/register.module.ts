@@ -5,18 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HomeComponent } from './home.component';
+import { RegisterComponent } from './register.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [RegisterComponent]
 })
-export class HomeModule { }
+export class RegisterModule { }

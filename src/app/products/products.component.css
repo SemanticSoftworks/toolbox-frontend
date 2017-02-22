@@ -403,3 +403,8 @@ p a:hover {
   text-align: center;
   width: 260px;
 }
+
+label {
+   display: block;
+   font-weight: bold;
+}

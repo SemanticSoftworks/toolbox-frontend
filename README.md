@@ -1,5 +1,6 @@
 # toolbox-frontend
 Frontend of the toolbox sharing economy service.
+Link: http://81.224.130.14:4200
 
 # Angular 2 CLI
 Please read the documentation at https://angular.io/docs/ts/latest/cli-quickstart.html for setting up the Angular 2 CLI.

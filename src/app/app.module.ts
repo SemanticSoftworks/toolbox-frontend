@@ -4,23 +4,32 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+//Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
+import { ProductDetailsComponent } from "./products/product-details.component";
 import { ProfileComponent } from "./profile/profile.component";
-import { AlertComponent } from "./directives/index";
-import { AlertService, AuthenticationService, UserService } from "./services/index";
-import { AuthGuard } from "./guards/index";
+import { RegisterComponent } from './register/index';
 import {SearchComponent} from "./search/search.component";
+
+// services
+import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
+import {AdService} from './services/ad.service'
+
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},  
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'products', component: ProductsComponent },  
+  { path: 'product-details/:id', component: ProductDetailsComponent},
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -29,8 +38,11 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     SearchComponent,
+    ProductsComponent,
+    ProductDetailsComponent,
     ProfileComponent,
-    AlertComponent
+    RegisterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +51,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AuthGuard,
-    AlertService,
-    AuthenticationService,
     UserService,
-    SearchService
+    SearchService,
+    AdService,
   ],
   bootstrap: [AppComponent]
 })

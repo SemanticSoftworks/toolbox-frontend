@@ -40,11 +40,6 @@ p a:hover {
   height: 160px;
   z-index: 2;
 }
-#header div div#figure {
-  background: url(../../images/livemusic.png) no-repeat;
-  height: 410px;
-  position: relative;
-}
 #header div:first-child div#logo {
   background: none;
   border: none;
@@ -88,7 +83,7 @@ p a:hover {
   position: absolute;
   top: 0;
 }
-#header div:first-child ul li.login {
+#header div:first-child ul li.blog {
   left: 830px;
   position: absolute;
   top: 0;
@@ -125,6 +120,7 @@ p a:hover {
   z-index: 1;
 }
 #header div div#figure {
+  background: url(../../images/livemusic.png) no-repeat;
   height: 410px;
   position: relative;
 }
@@ -153,8 +149,20 @@ p a:hover {
   margin: 0;
   text-transform: uppercase;
 }
+#header div span#background-login {
+  background: url(../../images/login.png) no-repeat center top;
+  display: block;
+  height: 139px;
+}
+
+#header div span#background-register {
+  background: url(../../images/register.png) no-repeat center top;
+  display: block;
+  height: 188px;
+}
+
 #header div span#background {
-  background: url(../../images/profile.png) no-repeat center top;
+  background: url(../../images/bg-blue.png) no-repeat center top;
   display: block;
   height: 101px;
 }

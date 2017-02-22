@@ -31,17 +31,13 @@ p a {
 p a:hover {
   color: #252323;
 }
-#header {
-  background: url(../../images/pinklight.png) repeat-x left top;
-  width: 100%;
-}
 #header div:first-child {
   border: none;
-  height: 160px;
+  height: 20px;
   z-index: 2;
 }
 #header div div#figure {
-  background: url(../images/livemusic.png) no-repeat;
+  background: url(../../images/livemusic.png) no-repeat;
   height: 410px;
   position: relative;
 }
@@ -54,45 +50,9 @@ p a:hover {
   position: absolute;
   top: 25px;
   width: 172px;
-  z-index: 1000;
+  z-index: 10;
 }
-#header div:first-child div#logo a img {
-  display: block;
-}
-#header div:first-child ul {
-  height: 43px;
-  list-style: none;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  top: 90px;
-  width: 960px;
-}
-#header div:first-child ul li {
-  display: inline-block;
-}
-#header div:first-child ul li.home {
-  left: 56px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.products {
-  left: 194px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.about {
-  left: 680px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.login {
-  left: 830px;
-  position: absolute;
-  top: 0;
-}
+
 #header div:first-child ul li a {
   display: block;
   color: #FFFFFF;
@@ -106,17 +66,7 @@ p a:hover {
   text-transform: uppercase;
   text-shadow: 0px -2px 0px #4f0428;
 }
-#header div:first-child ul li.current a {
-  background: url(../../images/bg-menu-left.png) no-repeat left top;
-  color: #FFFFFF;
-}
-#header div:first-child ul li.current a span {
-  background: url(../../images/bg-menu-right.png) no-repeat right top;
-  display: block;
-  height: 43px;
-  padding: 0 15px 0 5px;
-  text-align: center;
-}
+
 #header div {
   height: auto;
   margin: 0 auto;

@@ -10,12 +10,21 @@
 <body>
 <div id="header">
   <div>
+    <div id="logo">
+      <a href="home"><img src="../images/logo.png" alt="Logo"></a>
+    </div>
     <ul>
       <li class="home">
         <a href="home"><span>Home</span></a>
       </li>
       <li class="products">
-        <a href="search"><span>Search</span></a>
+        <a href="products"><span>Products</span></a>
+      </li>
+      <li class="about">
+        <a href="profile"><span>My Profile</span></a>
+      </li>
+      <li class="login">
+        <a href="login"><span>Login</span></a>
       </li>
     </ul>
   </div>
@@ -28,17 +37,16 @@
     <div>
       <div>
         <div>
-          <div id="dynamicBody">
-              <ul class="ad">
-                <li *ngFor="let ad of ads"
-                  [class.selected]="ad === selectedAd"
-                  (click)="onSelect(ad)">
-                  <a [routerLink]="['/product-details', ad.adId]">
-                  <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">                  
-                  <span class="badge"></span> {{ad.title}}
-                  </a>
-                </li>
-              </ul>
+          <div *ngIf="detailedAd">
+            <h2>{{detailedAd.title}}</h2>
+
+            <img src="images/{{detailedAd.adId}}.jpg" alt="Image" width="400">
+
+            <label>Price: </label> <p></p>
+            <label>Description:</label> <p>{{detailedAd.description}}</p>
+            <label>Duration: </label> <p>{{detailedAd.duration}}</p>
+            <label>Category: </label> <p>{{detailedAd.category}}</p>
+            <label>Accepted payments: </label> <p></p>
           </div>
         </div>
       </div>
