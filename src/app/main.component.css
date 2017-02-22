@@ -108,7 +108,7 @@ p a:hover {
 #header div span#background-register {
   background: url(../images/register.png) no-repeat center top;
   display: block;
-  height: 188px;
+  height: 150px;
 }
 #header div span#background-products {
   background: url(../images/products.png) no-repeat center top;
@@ -121,7 +121,7 @@ p a:hover {
   height: 101px;
 }
 #body {
-  margin: -40px 0 0;
+  margin: 40px 0 0;
 }
 #body p {
   margin: 0;

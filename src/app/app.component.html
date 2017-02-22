@@ -11,14 +11,6 @@
     <li><a href="home">Home</a></li>
     <li><a href="products">Products</a></li>
     <li><a href="search"><span>Search</span></a></li>
-    <li class="dropdown">
-      <a href="#drop">Dropdown</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </li>
     <li class="login-logout" *ngIf="!online">
       <a href="register"><span>Register</span></a>
     </li>
@@ -28,8 +20,13 @@
     <li class="login-logout" *ngIf="!online">
       <a href="login"><span>Login</span></a>
     </li>
-    <li class="login-logout" *ngIf="online">
-      <a href="profile"><span>{{currentUser.username}}</span></a>
+    <li class="dropdown login-logout" *ngIf="online">
+      <a href="profile">{{currentUser.username}}</a>
+      <div class="dropdown-content">
+        <a href="">Link 1</a>
+        <a href="">Link 2</a>
+        <a href="">Link 3</a>
+      </div>
     </li>
   </ul>
 </div>
