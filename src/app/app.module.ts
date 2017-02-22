@@ -24,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
+  { path: 'products', component: ProductsComponent },  
 ];
 
 @NgModule({
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     LoginComponent,
     SearchComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    UserService,
     UserService,
     SearchService
   ],
