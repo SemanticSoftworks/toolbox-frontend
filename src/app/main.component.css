@@ -418,3 +418,9 @@ label {
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+pagination-controls {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}

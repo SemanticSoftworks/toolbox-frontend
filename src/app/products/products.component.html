@@ -19,16 +19,19 @@
       <div>
         <div>
           <div id="dynamicBody">
-              <ul class="ad">
-                <li *ngFor="let ad of ads"
+            <ul class="ad">
+              <!-- tmp val of 1 -->
+              <li *ngFor="let ad of ads | paginate: { itemsPerPage: 1, currentPage: p }"
                   [class.selected]="ad === selectedAd"
                   (click)="onSelect(ad)">
                   <a [routerLink]="['/product-details', ad.adId]">
                   <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">
-                  <span class="badge"></span> {{ad.title}}
+                  {{ad.title}}
                   </a>
-                </li>
-              </ul>
+              </li>
+            </ul>
+
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
         </div>
       </div>
