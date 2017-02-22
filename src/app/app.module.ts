@@ -12,7 +12,7 @@ import { ProductsComponent } from "./products/products.component";
 import { ProductDetailsComponent } from "./products/product-details.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from './register/index';
-import {SearchComponent} from "./search/search.component";
+import { SearchComponent } from "./search/search.component";
 
 // services
 import { UserService } from "./services/index";
@@ -21,13 +21,13 @@ import {AdService} from './services/ad.service'
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},  
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
-  { path: 'products', component: ProductsComponent },  
+  { path: 'products', component: ProductsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent},
   { path: 'register', component: RegisterComponent}
 ];
@@ -42,7 +42,6 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     ProfileComponent,
     RegisterComponent,
-    ProductsComponent
   ],
   imports: [
     BrowserModule,
