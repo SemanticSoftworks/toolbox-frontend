@@ -9,7 +9,7 @@ import { Ad } from './products.component';
   selector: 'product-details',
   templateUrl: './product-details.component.html',
   providers: [AdService],
-  styleUrls: ['./products.component2.css'],
+  styleUrls: ['../main.component.css'],
 })
 
 export class ProductDetailsComponent {

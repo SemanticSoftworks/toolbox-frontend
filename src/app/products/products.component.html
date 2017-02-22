@@ -5,12 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Products - Gadget Shop Website Template</title>
-  <link rel="stylesheet" type="text/css" href="app/products/products.component.css">
+  <link rel="stylesheet" type="text/css" href="app/main.component.css">
 </head>
 <body>
 <div id="header">
   <div>
-    <span id="background"></span>
+    <span id="background-products"></span>
   </div>
 </div>
 <div id="body">
@@ -24,7 +24,7 @@
                   [class.selected]="ad === selectedAd"
                   (click)="onSelect(ad)">
                   <a [routerLink]="['/product-details', ad.adId]">
-                  <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">                  
+                  <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">
                   <span class="badge"></span> {{ad.title}}
                   </a>
                 </li>

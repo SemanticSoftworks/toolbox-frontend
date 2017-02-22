@@ -9,16 +9,16 @@ import {AdService} from '../services/ad.service'
   selector: 'products-root',
   templateUrl: './products.component.html',
   providers: [AdService],
-  styleUrls: ['./products.component2.css'],
+  styleUrls: ['../main.component.css'],
 })
 export class ProductsComponent {
   ads: Ad[];
   selectedAd: Ad;
 
-  constructor(private router: Router, private adService: AdService) { 
+  constructor(private router: Router, private adService: AdService) {
     this.adService.getAds().subscribe(ads => {
       console.log("getting ads");
-      console.log(ads); 
+      console.log(ads);
       this.ads = ads;
     });
   }

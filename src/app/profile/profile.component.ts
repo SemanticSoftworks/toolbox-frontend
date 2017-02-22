@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'profile-root',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['../main.component.css'],
 })
 
 export class ProfileComponent implements OnInit{

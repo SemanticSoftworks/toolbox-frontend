@@ -4,7 +4,7 @@ h1 {
   font-size: 250%;
 }
 body {
-  background: url(../../images/bg-body.jpg) repeat left top;
+  background: url(../images/bg-body.jpg) repeat left top;
   color: #515151;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -31,20 +31,12 @@ p a {
 p a:hover {
   color: #252323;
 }
-#header {
-  background: url(../../images/pinklight.png) repeat-x left top;
-  width: 100%;
-}
 #header div:first-child {
   border: none;
-  height: 160px;
+  height: 20px;
   z-index: 2;
 }
-#header div div#figure {
-  background: url(../../images/livemusic.png) no-repeat;
-  height: 410px;
-  position: relative;
-}
+
 #header div:first-child div#logo {
   background: none;
   border: none;
@@ -54,45 +46,9 @@ p a:hover {
   position: absolute;
   top: 25px;
   width: 172px;
-  z-index: 1000;
+  z-index: 10;
 }
-#header div:first-child div#logo a img {
-  display: block;
-}
-#header div:first-child ul {
-  height: 43px;
-  list-style: none;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  top: 90px;
-  width: 960px;
-}
-#header div:first-child ul li {
-  display: inline-block;
-}
-#header div:first-child ul li.home {
-  left: 56px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.products {
-  left: 194px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.about {
-  left: 680px;
-  position: absolute;
-  top: 0;
-}
-#header div:first-child ul li.login {
-  left: 830px;
-  position: absolute;
-  top: 0;
-}
+
 #header div:first-child ul li a {
   display: block;
   color: #FFFFFF;
@@ -106,17 +62,7 @@ p a:hover {
   text-transform: uppercase;
   text-shadow: 0px -2px 0px #4f0428;
 }
-#header div:first-child ul li.current a {
-  background: url(../../images/bg-menu-left.png) no-repeat left top;
-  color: #FFFFFF;
-}
-#header div:first-child ul li.current a span {
-  background: url(../../images/bg-menu-right.png) no-repeat right top;
-  display: block;
-  height: 43px;
-  padding: 0 15px 0 5px;
-  text-align: center;
-}
+
 #header div {
   height: auto;
   margin: 0 auto;
@@ -153,8 +99,24 @@ p a:hover {
   margin: 0;
   text-transform: uppercase;
 }
-#header div span#background {
-  background: url(../../images/profile.png) no-repeat center top;
+#header div span#background-login {
+  background: url(../images/login.png) no-repeat center top;
+  display: block;
+  height: 139px;
+}
+
+#header div span#background-register {
+  background: url(../images/register.png) no-repeat center top;
+  display: block;
+  height: 188px;
+}
+#header div span#background-products {
+  background: url(../images/products.png) no-repeat center top;
+  display: block;
+  height: 100px;
+}
+#header div span#background-profile {
+  background: url(../images/profile.png) no-repeat center top;
   display: block;
   height: 101px;
 }
@@ -165,19 +127,19 @@ p a:hover {
   margin: 0;
 }
 #body div {
-  background:  url(../../images/bg-content2.png) repeat-x left top;
+  background:  url(../images/bg-content2.png) repeat-x left top;
   border-bottom: 2px solid #86104a;
   padding: 0;
   width: 100%;
 }
 #body div div {
-  background: url(../../images/bg-content.png) no-repeat center top;
+  background: url(../images/bg-content.png) no-repeat center top;
   border: 0;
   padding: 104px 0 0;
   width: 100%;
 }
 #body div div div {
-  background: url(../../images/bg-content3.jpg) repeat left 108px;
+  background: url(../images/bg-content3.jpg) repeat left 108px;
   border: 0;
   margin: 0;
   padding: 0;
@@ -232,7 +194,7 @@ p a:hover {
   margin: 0;
 }
 #body div div div div ul li h2 a {
-  background: url(../../images/bg-prodname.png) repeat-x;
+  background: url(../images/bg-prodname.png) repeat-x;
   color: #FFF;
   display: block;
   height: 57px;
@@ -243,7 +205,7 @@ p a:hover {
   text-transform: uppercase;
 }
 #body div div div div ul li h2 a:hover {
-  background: url(../../images/bg-prodname-hover.png) repeat-x;
+  background: url(../images/bg-prodname-hover.png) repeat-x;
 }
 #body div div div div div {
   background: none;
@@ -319,7 +281,7 @@ p a:hover {
   width: 940px;
 }
 #footer div div:first-child {
-  background: url(../../images/footer-separator.png) no-repeat right top;
+  background: url(../images/footer-separator.png) no-repeat right top;
   float: left;
   padding: 0 90px 0 20px;
   width: 660px;
@@ -373,24 +335,24 @@ p a:hover {
   margin: 0;
 }
 #footer div div ul li a#googleplus {
-  background: url(../../images/icons.png) no-repeat 3px -104px;
+  background: url(../images/icons.png) no-repeat 3px -104px;
 }
 #footer div div ul li a#googleplus:hover {
-  background: url(../../images/icons.png) no-repeat 3px -126px;
+  background: url(../images/icons.png) no-repeat 3px -126px;
 }
 #footer div div ul li a#twitter {
-  background: url(../../images/icons.png) no-repeat 0 -54px;
+  background: url(../images/icons.png) no-repeat 0 -54px;
   height: 20px;
   line-height: 20px;
 }
 #footer div div ul li a#twitter:hover {
-  background: url(../../images/icons.png) no-repeat 0 -74px;
+  background: url(../images/icons.png) no-repeat 0 -74px;
 }
 #footer div div ul li a#facebook {
-  background: url(../../images/icons.png) no-repeat 8px 0;
+  background: url(../images/icons.png) no-repeat 8px 0;
 }
 #footer div div ul li a#facebook:hover {
-  background: url(../../images/icons.png) no-repeat 8px -22px;
+  background: url(../images/icons.png) no-repeat 8px -22px;
 }
 #footer p.footnote {
   background: #991456;
@@ -402,4 +364,57 @@ p a:hover {
   margin: 30px auto 0;
   text-align: center;
   width: 260px;
+}
+
+label {
+   display: block;
+   font-weight: bold;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
 }

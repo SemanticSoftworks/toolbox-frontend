@@ -14,7 +14,7 @@ import {Ad} from "../models/ad";
 @Component({
   selector: 'search-root',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  styleUrls: ['../main.component.css'],
   providers: [SearchService]
 })
 export class SearchComponent {
