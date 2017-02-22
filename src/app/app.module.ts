@@ -10,8 +10,12 @@ import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
 import { ProfileComponent } from "./profile/profile.component";
+
 import { UserService } from "./services/index";
 import { RegisterComponent } from './register/index';
+import {SearchComponent} from "./search/search.component";
+import {SearchService} from "./services/search.service";
+
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +23,9 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'products', component: ProductsComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'search', component: SearchComponent},
+  { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -27,7 +33,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ProductsComponent,
+    SearchComponent,
     ProfileComponent,
     RegisterComponent
   ],
@@ -39,6 +45,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     UserService,
+    UserService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
