@@ -17,6 +17,10 @@
         <div>
           <div>
             <ul>
+              <form>
+                <input #textbox type="text" placeholder="Search query" >
+                <input type="button" (click)=search(textbox.value) value="Search">
+              </form>
               <li *ngFor="let ad of list">
                 title: {{ad.title}}
                 date: {{ad.duration}}
