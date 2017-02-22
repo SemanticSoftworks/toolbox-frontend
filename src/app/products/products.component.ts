@@ -33,7 +33,7 @@ export class ProductsComponent {
 export class Ad {
   adId: number;
   userId: number;
-  category: string; // 4 now
+  category: string;
   title: string;
   description: string;
   duration: string;
