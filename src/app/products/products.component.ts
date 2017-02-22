@@ -3,14 +3,38 @@
  */
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {AdService} from '../services/ad.service'
 
 @Component({
   selector: 'products-root',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'],
+  providers: [AdService],
+  styleUrls: ['./products.component2.css'],
 })
 export class ProductsComponent {
+  ads: Ad[];
+  selectedAd: Ad;
 
-  constructor(private router: Router) { }
-  title = 'app works';
+  constructor(private router: Router, private adService: AdService) { 
+    this.adService.getAds().subscribe(ads => {
+      console.log("getting ads");
+      console.log(ads); 
+      this.ads = ads;
+    });
+  }
+
+  onSelect(ad: Ad): void {
+    this.selectedAd = ad;
+  }
+
+  title = 'Products';
+}
+
+export class Ad {
+  adId: number;
+  userId: number;
+  category: string; // 4 now
+  title: string;
+  description: string;
+  duration: string;
 }
