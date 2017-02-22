@@ -23,9 +23,9 @@
     <li class="dropdown login-logout" *ngIf="online">
       <a href="profile">{{currentUser.username}}</a>
       <div class="dropdown-content">
-        <a href="">Link 1</a>
-        <a href="">Link 2</a>
-        <a href="">Link 3</a>
+        <a href="" *ngIf="!isAdmin">Create ad</a>
+        <a href="" *ngIf="isAdmin">Manage users</a>
+        <a href="" *ngIf="isAdmin">Manage ads</a>
       </div>
     </li>
   </ul>
