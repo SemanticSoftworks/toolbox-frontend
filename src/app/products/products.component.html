@@ -49,7 +49,7 @@
               <li *ngFor="let ad of ads"
                 [class.selected]="ad === selectedAd"
                 (click)="onSelect(ad)">
-                <img src="images/headphone5.png" alt="Image">
+                <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">
                 <a [routerLink]="['/product-details', ad.adId]">
                 <span class="badge"></span> {{ad.title}}
                 </a>
@@ -66,32 +66,7 @@
             </div>
         </div>
         
-          <ul>
-            <li>
-              <a href="products"><img src="images/headphone4.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone5.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone6.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone7.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone8.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-            <li>
-              <a href="products"><img src="images/headphone9.png" alt="Image"></a>
-              <h2><a href="products">Product</a></h2>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
