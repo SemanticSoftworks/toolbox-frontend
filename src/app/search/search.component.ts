@@ -25,7 +25,7 @@ export class SearchComponent {
   constructor(private router: Router, private http:Http, private searchService : SearchService) {
 
     this.searchService.getLatestAds().subscribe(x => {
-      this.list = x;
+      //this.list = x;
 
       //console.log('list' +x);
       }
