@@ -26,10 +26,32 @@ export class ProfileComponent implements OnInit{
 
   }
 
-  updateProfile() {
-    console.log("test update");
-    this.edit = false;
-    this.router.navigate(['/profile']);
+  updateProfile(event: Event) {
+    event.preventDefault();
+    this.model.username = this.currentUser.username;
+    if(this.model.firstname == null) {
+      this.model.firstname = this.currentUser.firstname;
+    }
+    if(this.model.lastname == null) {
+      this.model.lastname = this.currentUser.lastname;
+    }
+    if(this.model.email == null) {
+      this.model.email = this.currentUser.email;
+    }
+    if(this.model.password == null) {
+      this.model.password = this.currentUser.password;
+    }
+    console.log(this.model.password);
+    this.userService.updateUser(this.model).subscribe(
+      data => {
+        console.log(data);
+        localStorage.setItem('currentUser', JSON.stringify(data));
+        this.edit = false;
+        window.location.href = '/profile';
+      },
+      error => {
+        alert(error);
+      });
   }
 
   toggleEdit() {
