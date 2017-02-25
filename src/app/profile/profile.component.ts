@@ -26,8 +26,7 @@ export class ProfileComponent implements OnInit{
 
   }
 
-  updateProfile(event: Event) {
-    event.preventDefault();
+  updateProfile() {
     this.model.username = this.currentUser.username;
     if(this.model.firstname == null) {
       this.model.firstname = this.currentUser.firstname;
@@ -41,10 +40,8 @@ export class ProfileComponent implements OnInit{
     if(this.model.password == null) {
       this.model.password = this.currentUser.password;
     }
-    console.log(this.model.password);
     this.userService.updateUser(this.model).subscribe(
       data => {
-        console.log(data);
         localStorage.setItem('currentUser', JSON.stringify(data));
         this.edit = false;
         window.location.href = '/profile';
