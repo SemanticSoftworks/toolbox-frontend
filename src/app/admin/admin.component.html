@@ -14,6 +14,20 @@
   </div>
 </div>
 <div id="body">
+  <div id="dynamicBody">
+    <ul class="user">
+      <!-- tmp val of 1 -->
+      <li *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: pageNumber }"
+          [class.selected]="user === selectedUser"
+          (click)="onSelect(user)">
+        <a [routerLink]="['/product-details', user.username]">
+          {{user.username}}
+        </a>
+      </li>
+    </ul>
+
+    <pagination-controls (pageChange)="setPageNumber($event)"></pagination-controls>
+  </div>
 </div>
 <div id="footer">
   <p class="footnote">

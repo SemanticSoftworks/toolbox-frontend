@@ -24,8 +24,8 @@
       <a href="profile">{{currentUser.username}}</a>
       <div class="dropdown-content">
         <a href="" *ngIf="!isAdmin">Create ad</a>
-        <a href="" *ngIf="isAdmin">Manage users</a>
-        <a href="" *ngIf="isAdmin">Manage ads</a>
+        <a href="admin/users" *ngIf="isAdmin">Manage users</a>
+        <a href="admin/ads" *ngIf="isAdmin">Manage ads</a>
       </div>
     </li>
   </ul>
