@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import {Ng2PaginationModule} from 'ng2-pagination';
 
 //Components
 import { AppComponent } from './app.component';
@@ -19,6 +18,8 @@ import { SearchComponent } from "./search/search.component";
 import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
 import {AdService} from './services/ad.service'
+import {AddComponent} from "./add/add.component";
+import {AddModule} from "./add/add.module";
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'add', component: AddComponent}
 ];
 
 @NgModule({
@@ -43,6 +45,7 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     ProfileComponent,
     RegisterComponent,
+    AddModule
   ],
   imports: [
     BrowserModule,
