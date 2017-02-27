@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import {Ng2PaginationModule} from 'ng2-pagination';
+import { Ng2PaginationModule } from 'ng2-pagination';
 
 //Components
 import { AppComponent } from './app.component';
@@ -15,13 +15,13 @@ import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from './register/index';
 import { SearchComponent } from "./search/search.component";
 import { AuthGuard } from './guard/index';
+import {AdminComponent} from "./admin/admin.component";
 
 // services
 import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
 import {AdService} from './services/ad.service'
-import {AdminComponent} from "./admin/admin.component";
-
+import {AdminService} from './services/admin.service'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -59,6 +59,7 @@ const appRoutes: Routes = [
     UserService,
     SearchService,
     AdService,
+    AdminService,
     AuthGuard,
   ],
   bootstrap: [AppComponent]

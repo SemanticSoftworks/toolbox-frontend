@@ -1,9 +1,6 @@
-/**
- * Created by alica on 2017-02-10.
- */
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../services/user.service";
 import {Router} from "@angular/router";
+import {AdminService} from "../services/admin.service";
 
 @Component({
   selector: 'profile-root',
@@ -13,7 +10,7 @@ import {Router} from "@angular/router";
 
 export class AdminComponent implements OnInit{
 
-  constructor(private userService: UserService,private router: Router) {
+  constructor(private adminService: AdminService, private router: Router) {
   }
 
   ngOnInit() {
