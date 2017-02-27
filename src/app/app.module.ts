@@ -16,14 +16,13 @@ import { RegisterComponent } from './register/index';
 import { SearchComponent } from "./search/search.component";
 import { AuthGuard } from './guard/index';
 import {AdminComponent} from "./admin/admin.component";
+import {AddComponent} from "./add/add.component";
 
 // services
 import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
-import {AdService} from './services/ad.service'
-import {AddComponent} from "./add/add.component";
-import {AddModule} from "./add/add.module";
-import {AdminService} from './services/admin.service'
+import {AdService} from './services/ad.service';
+import {AdminService} from './services/admin.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -49,7 +48,7 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     ProfileComponent,
     RegisterComponent,
-    AddModule,
+    AddComponent,
     AdminComponent
   ],
   imports: [

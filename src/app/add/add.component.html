@@ -15,7 +15,7 @@
               <input #category type="category" placeholder="Category" >
               <input #title type="title" placeholder="Title" >
               <input #description type="description" placeholder="Description" >
-              <input type="button" (click)=add(username.value) value="Create">
+              <input type="button" (click)=add(username.value,category.value,title.value,description.value) value="Create">
             </form>
           </div>
         </div>
