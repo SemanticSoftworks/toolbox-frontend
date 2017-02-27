@@ -120,6 +120,11 @@ p a:hover {
   display: block;
   height: 101px;
 }
+#header div span#background-admin {
+  background: url(../images/admin.png) no-repeat center top;
+  display: block;
+  height: 118px;
+}
 #body {
   margin: 40px 0 0;
 }
