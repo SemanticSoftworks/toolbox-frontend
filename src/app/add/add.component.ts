@@ -22,6 +22,6 @@ export class AddComponent {
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://smuts.noip.me:8090/ad/add', this.ad, options).map((response: Response) => response.json());
+    return this.http.post('http://130.229.173.224:8090/ad/add', this.ad, options).map((response: Response) => response.json());
   }
 }
