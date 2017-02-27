@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { Ng2PaginationModule } from 'ng2-pagination';
 
 //Components
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ProductDetailsComponent } from "./products/product-details.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from './register/index';
 import { SearchComponent } from "./search/search.component";
+import { AuthGuard } from './guard/index';
+import {AdminComponent} from "./admin/admin.component";
 
 // services
 import { UserService } from "./services/index";
@@ -20,19 +23,20 @@ import {SearchService} from "./services/search.service";
 import {AdService} from './services/ad.service'
 import {AddComponent} from "./add/add.component";
 import {AddModule} from "./add/add.module";
-
+import {AdminService} from './services/admin.service'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent},
   { path: 'search', component: SearchComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'add', component: AddComponent}
+  { path: 'add', component: AddComponent},
+  { path: 'admin/:string', component: AdminComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -45,7 +49,8 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     ProfileComponent,
     RegisterComponent,
-    AddModule
+    AddModule,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,8 @@ const appRoutes: Routes = [
     UserService,
     SearchService,
     AdService,
+    AdminService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
