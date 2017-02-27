@@ -19,6 +19,7 @@ import { SearchComponent } from "./search/search.component";
 import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
 import {AdService} from './services/ad.service'
+import {PhotoService} from './services/photo.service'
 
 
 const appRoutes: Routes = [
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
     UserService,
     SearchService,
     AdService,
+    PhotoService,
   ],
   bootstrap: [AppComponent]
 })
