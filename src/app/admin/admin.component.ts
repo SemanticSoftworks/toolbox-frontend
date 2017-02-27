@@ -14,7 +14,6 @@ import {Router} from "@angular/router";
 export class AdminComponent implements OnInit{
 
   constructor(private userService: UserService,private router: Router) {
-    //Should not be in here if not logged in.
   }
 
   ngOnInit() {
