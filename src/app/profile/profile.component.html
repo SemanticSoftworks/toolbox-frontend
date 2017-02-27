@@ -5,12 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <title>My Profile</title>
-  <link rel="stylesheet" type="text/css" href="app/profile/profile.component.css">
+  <link rel="stylesheet" type="text/css" href="app/main.component.css">
 </head>
 <body>
 <div id="header">
   <div>
-    <span id="background"></span>
+    <span id="background-profile"></span>
   </div>
 </div>
 <div id="body">
@@ -39,23 +39,20 @@
       <form name="form" (ngSubmit)="f.form.valid && updateProfile()" #f="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstname.valid }">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required />
-          <p style="color: red" *ngIf="f.submitted && !firstname.valid" class="help-block">First Name is required</p>
+          <input type="text" class="form-control" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel"/>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastname.valid }">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" required />
-          <p style="color: red" *ngIf="f.submitted && !lastname.valid" class="help-block">Last Name is required</p>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-          <p style="color: red" *ngIf="f.submitted && !username.valid" class="help-block">Username is required</p>
+          <input type="text" class="form-control" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel"/>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
           <label for="email">Email</label>
-          <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
-          <p style="color: red" *ngIf="f.submitted && !email.valid" class="help-block">Email is required</p>
+          <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"/>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required/>
+          <p style="color: red" *ngIf="f.submitted && !password.valid" class="help-block">Password is required</p>
         </div>
         <div class="form-group">
           <button [disabled]="loading" class="btn btn-primary">Update</button>

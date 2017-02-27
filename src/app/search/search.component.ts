@@ -14,7 +14,7 @@ import {Ad} from "../models/ad";
 @Component({
   selector: 'search-root',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
+  styleUrls: ['../main.component.css'],
   providers: [SearchService]
 })
 export class SearchComponent {
@@ -25,7 +25,7 @@ export class SearchComponent {
   constructor(private router: Router, private http:Http, private searchService : SearchService) {
 
     this.searchService.getLatestAds().subscribe(x => {
-      this.list = x;
+      //this.list = x;
 
       //console.log('list' +x);
       }

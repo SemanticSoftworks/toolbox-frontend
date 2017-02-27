@@ -27,4 +27,10 @@ export class UserService {
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://smuts.noip.me:8090/user/register', user, options).map((response: Response) => response.json());
   }
+
+  updateUser(user: User) {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post('http://smuts.noip.me:8090/user/update', user, options).map((response: Response) => response.json());
+  }
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import {Ng2PaginationModule} from 'ng2-pagination';
 
 //Components
 import { AppComponent } from './app.component';
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    Ng2PaginationModule,
   ],
   providers: [
     UserService,

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Searching...</title>
-  <link rel="stylesheet" type="text/css" href="app/search/search.component.css">
+  <link rel="stylesheet" type="text/css" href="app/main.component.css">
 </head>
 <body>
 <div id="header">
@@ -21,10 +21,20 @@
                 <input #textbox type="text" placeholder="Search query" >
                 <input type="button" (click)=search(textbox.value) value="Search">
               </form>
-              <li *ngFor="let ad of list">
-                title: {{ad.title}}
-                date: {{ad.duration}}
-              </li>
+
+              <ul class="ad">
+                <!-- Would be great to import this functionality as a component -->
+                <li *ngFor="let ad of list | paginate: { itemsPerPage: 20, currentPage: p }"
+                    [class.selected]="ad === selectedAd"
+                    (click)="onSelect(ad)">
+                    <a [routerLink]="['/product-details', ad.adId]">
+                    <img src="images/{{ad.adId}}.jpg" alt="Image" width="200">
+                    {{ad.title}}
+                    </a>
+                </li>
+              </ul>
+
+              <pagination-controls (pageChange)="p = $event" *ngIf="list"></pagination-controls>
             </ul>
           </div>
         </div>

@@ -5,7 +5,7 @@
 @Component({
   moduleId: module.id,
   templateUrl: 'login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../main.component.css']
 })
 
 export class LoginComponent implements OnInit {
