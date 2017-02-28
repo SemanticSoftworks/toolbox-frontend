@@ -10,18 +10,18 @@ export class AdService {
     }
 
     getAds() {
-        return this.http.get('http://81.224.130.14:8090/ad/getads/0')
+        return this.http.get('http://smuts.noip.me:8090/ad/getads/0')
             .map(res => res.json());
     }
 
     getAd(ad: number) {
-        return this.http.get('http://81.224.130.14:8090/ad/' + ad)
+        return this.http.get('http://smuts.noip.me:8090/ad/' + ad)
             .map(res => res.json());
     }
 
     createAd(ad :Ad) {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      return this.http.post('http://130.229.158.237:8090/ad/add', ad, options).map((response: Response) => response.json());
+      return this.http.post('http://smuts.noip.me:8090/ad/add', ad, options).map((response: Response) => response.json());
     }
 }
