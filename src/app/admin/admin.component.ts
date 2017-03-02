@@ -29,12 +29,16 @@ export class AdminComponent implements OnInit{
     if(this.id === 'users') {
       this.adminService.getUsers(this.pageNumber)
         .subscribe(users => {
-        console.log("getting users");
-        console.log(users);
         this.users = users;
+        localStorage.setItem('availableUsers', JSON.stringify(users));
       });
+      this.adminService.getRoles()
+        .subscribe(roles => {
+          localStorage.setItem('availableRoles', JSON.stringify(roles));
+        });
+      this.isUsers = true;
     } else if(this.id === 'ads') {
-
+      this.isUsers = false;
     } else {
       this.router.navigate(['/home']);
     }
@@ -43,6 +47,10 @@ export class AdminComponent implements OnInit{
   }
 
   setPageNumber(page: number) {
+    this.adminService.getUsers(this.pageNumber)
+      .subscribe(users => {
+        this.users = users;
+      });
     this.pageNumber = page;
   }
 

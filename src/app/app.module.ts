@@ -22,6 +22,7 @@ import { UserService } from "./services/index";
 import {SearchService} from "./services/search.service";
 import {AdService} from './services/ad.service'
 import {AdminService} from './services/admin.service'
+import {AdminUserComponent} from "./admin/admin-user.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'admin/:string', component: AdminComponent, canActivate: [AuthGuard]}
+  { path: 'admin/:string', component: AdminComponent, canActivate: [AuthGuard]},
+  { path: 'admin-user/:id', component: AdminUserComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     RegisterComponent,
     AdminComponent,
+    AdminUserComponent
   ],
   imports: [
     BrowserModule,

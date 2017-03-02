@@ -15,14 +15,26 @@ export class AdminService {
     params.set('startPosition', '' + ((nr * 10) - 10));
     params.set('endPosition', '' + (((nr + 1) * 10) - 10));
     let headers = new Headers();
-    headers.append('Authorization', 'Basic ' + new Buffer(name + ':' + pw).toString('base64'));
-    let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://81.224.130.14:8090/admin/user',{headers: headers, search: params}).map(res => res.json());
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers, search: params });
+    return this.http.get('http://localhost:8091/admin/user', options).map(res => res.json());
   }
 
   updateUser(user: User) {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
     let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://smuts.noip.me:8090/user/update', user, options).map((response: Response) => response.json());
+    return this.http.post('http://localhost:8091/user/update', user, options).map((response: Response) => response.json());
+  }
+
+  getRoles() {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
+    let headers = new Headers();
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers});
+    return this.http.get('http://localhost:8091/admin/role', options).map(res => res.json());
   }
 }
