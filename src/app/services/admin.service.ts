@@ -17,7 +17,7 @@ export class AdminService {
     let headers = new Headers();
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers, search: params });
-    return this.http.get('http://localhost:8091/admin/user', options).map(res => res.json());
+    return this.http.get('http://localhost:8090/admin/user', options).map(res => res.json());
   }
 
   updateUser(user: User) {
@@ -26,7 +26,7 @@ export class AdminService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:8091/user/update', user, options).map((response: Response) => response.json());
+    return this.http.post('http://localhost:8090/user/update', user, options).map((response: Response) => response.json());
   }
 
   getRoles() {
@@ -35,6 +35,6 @@ export class AdminService {
     let headers = new Headers();
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers});
-    return this.http.get('http://localhost:8091/admin/role', options).map(res => res.json());
+    return this.http.get('http://localhost:8090/admin/role', options).map(res => res.json());
   }
 }
