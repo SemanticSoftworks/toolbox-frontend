@@ -16,6 +16,9 @@ export class AdminComponent implements OnInit{
   id: string;
   isUsers: boolean;
   pageNumber: number = 1;
+  model: any = {};
+  addUser: boolean;
+  roles: any = {};
 
   constructor(private adminService: AdminService, private router: Router, private route: ActivatedRoute) {
 
@@ -34,16 +37,15 @@ export class AdminComponent implements OnInit{
       });
       this.adminService.getRoles()
         .subscribe(roles => {
+          this.roles = roles;
           localStorage.setItem('availableRoles', JSON.stringify(roles));
         });
       this.isUsers = true;
-    } else if(this.id === 'ads') {
+    } else if(this.id === 'ads') { // need implementation
       this.isUsers = false;
     } else {
       this.router.navigate(['/home']);
     }
-
-    console.log(this.id);
   }
 
   setPageNumber(page: number) {
@@ -52,6 +54,24 @@ export class AdminComponent implements OnInit{
         this.users = users;
       });
     this.pageNumber = page;
+  }
+
+  toggleAddUser() {
+    this.addUser = !this.addUser;
+  }
+
+  addNewUser() {
+    if(this.model.enabled == null) {
+      this.model.enabled = false;
+    }
+    if(this.model.userRoles == null) {
+      this.model.userRoles = ['ROLE_AUCTIONEER'];
+    }
+    this.adminService.addUser(this.model)
+      .subscribe(user => {
+        this.toggleAddUser();
+        window.location.href = '/admin/users';
+      });
   }
 
   ngOnDestroy() {

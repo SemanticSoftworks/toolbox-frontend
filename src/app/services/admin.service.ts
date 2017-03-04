@@ -37,4 +37,13 @@ export class AdminService {
     let options = new RequestOptions({ headers: headers});
     return this.http.get('http://smuts.noip.me:8090/admin/role', options).map(res => res.json());
   }
+
+  addUser(user: User) {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers});
+    return this.http.post('http://smuts.noip.me:8090/admin/user', user, options).map((response: Response) => response.json());
+  }
 }
