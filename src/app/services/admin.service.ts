@@ -26,7 +26,7 @@ export class AdminService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://smuts.noip.me:8090/user/update', user, options).map((response: Response) => response.json());
+    return this.http.post('http://smuts.noip.me:8090/admin/user/update', user, options).map((response: Response) => response.json());
   }
 
   getRoles() {
