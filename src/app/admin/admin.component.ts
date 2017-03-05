@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {AdminService} from "../services/admin.service";
 import {User} from "../models/user";
+import {AdService} from "../services/ad.service";
+import {Ad} from "../models/ad";
 
 @Component({
   selector: 'profile-root',
@@ -11,7 +13,6 @@ import {User} from "../models/user";
 
 export class AdminComponent implements OnInit{
   users: User[];
-  selectedUser: User;
   sub: any;
   id: string;
   isUsers: boolean;
@@ -19,8 +20,9 @@ export class AdminComponent implements OnInit{
   model: any = {};
   addUser: boolean;
   roles: any = {};
+  ads: Ad[];
 
-  constructor(private adminService: AdminService, private router: Router, private route: ActivatedRoute) {
+  constructor(private adminService: AdminService, private adService: AdService, private router: Router, private route: ActivatedRoute) {
 
   }
 
@@ -41,18 +43,27 @@ export class AdminComponent implements OnInit{
           localStorage.setItem('availableRoles', JSON.stringify(roles));
         });
       this.isUsers = true;
-    } else if(this.id === 'ads') { // need implementation
+    } else if(this.id === 'ads') {
+      this.adService.getAds()
+        .subscribe(ads => {
+          console.log(ads);
+          this.ads = ads;
+        });
       this.isUsers = false;
     } else {
       this.router.navigate(['/home']);
     }
   }
 
-  setPageNumber(page: number) {
+  setUserPageNumber(page: number) {
     this.adminService.getUsers(this.pageNumber)
       .subscribe(users => {
         this.users = users;
       });
+    this.pageNumber = page;
+  }
+
+  setAdPageNumber(page: number) {
     this.pageNumber = page;
   }
 

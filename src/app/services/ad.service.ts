@@ -5,11 +5,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AdService {
     constructor(private http: Http) {
-        console.log("ads service initialized");
     }
 
     getAds() {
-        return this.http.get('http://81.224.130.14:8090/ad/getads/0')
+        return this.http.get('http://localhost:8091/ad/getads/0')
             .map(res => res.json());
     }
 
