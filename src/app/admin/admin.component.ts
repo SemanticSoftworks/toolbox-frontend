@@ -4,6 +4,7 @@ import {AdminService} from "../services/admin.service";
 import {User} from "../models/user";
 import {AdService} from "../services/ad.service";
 import {Ad} from "../models/ad";
+import {Role} from "../models/role";
 
 @Component({
   selector: 'profile-root',
@@ -19,8 +20,10 @@ export class AdminComponent implements OnInit{
   pageNumber: number = 1;
   model: any = {};
   addUser: boolean;
-  roles: any = {};
+  roles: Role[];
   ads: Ad[];
+  addRole: boolean;
+  updateRole: boolean;
 
   constructor(private adminService: AdminService, private adService: AdService, private router: Router, private route: ActivatedRoute) {
 
@@ -69,6 +72,8 @@ export class AdminComponent implements OnInit{
 
   toggleAddUser() {
     this.addUser = !this.addUser;
+    this.addRole = false;
+    this.updateRole = false;
   }
 
   addNewUser() {
@@ -83,6 +88,44 @@ export class AdminComponent implements OnInit{
         this.toggleAddUser();
         window.location.href = '/admin/users';
       });
+  }
+
+  toggleAddRole() {
+    this.addRole = !this.addRole;
+    this.addUser = false;
+    this.updateRole = false;
+  }
+
+  addNewRole() {
+    this.adminService.addRole(this.model.role)
+      .subscribe(role => {
+        this.toggleAddRole();
+        window.location.href = '/admin/users';
+      });
+  }
+
+  toggleUpdateRole() {
+    this.updateRole = !this.updateRole;
+    this.addRole = false;
+    this.addUser = false;
+  }
+
+  updateExistingRole() {
+    if(this.model.selectedrole == null) {
+      alert("Select a role to update");
+    } else {
+      for(var i = 0;i < this.roles.length;i++) {
+        if(this.roles[i].role === this.model.selectedrole) {
+          this.roles[i].role = this.model.updaterole;
+          this.adminService.updateRole(this.roles[i])
+            .subscribe(role => {
+              this.toggleUpdateRole();
+              window.location.href = '/admin/users';
+          });
+          break;
+        }
+      }
+    }
   }
 
   ngOnDestroy() {
