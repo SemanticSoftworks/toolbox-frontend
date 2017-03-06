@@ -24,6 +24,8 @@ export class AdminComponent implements OnInit{
   ads: Ad[];
   addRole: boolean;
   updateRole: boolean;
+  addCategory: boolean;
+  updateCategory: boolean;
 
   constructor(private adminService: AdminService, private adService: AdService, private router: Router, private route: ActivatedRoute) {
 
@@ -126,6 +128,24 @@ export class AdminComponent implements OnInit{
         }
       }
     }
+  }
+
+  toggleAddCategory() {
+    this.addCategory = !this.addCategory;
+    this.updateCategory = false;
+  }
+
+  addNewCategory() {
+    this.adminService.addCategory(this.model.category)
+      .subscribe(category => {
+        this.toggleAddCategory();
+        window.location.href = '/admin/ads';
+      });
+  }
+
+  toggleUpdateCategory() {
+    this.updateCategory = !this.updateCategory;
+    this.addCategory = false;
   }
 
   ngOnDestroy() {

@@ -35,7 +35,7 @@ export class AdminService {
     var pw = localStorage.getItem('password');
     let headers = new Headers();
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
-    let options = new RequestOptions({ headers: headers});
+    let options = new RequestOptions({ headers: headers });
     return this.http.get('http://smuts.noip.me:8090/admin/role', options).map(res => res.json());
   }
 
@@ -44,7 +44,7 @@ export class AdminService {
     var pw = localStorage.getItem('password');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
-    let options = new RequestOptions({ headers: headers});
+    let options = new RequestOptions({ headers: headers });
     return this.http.post('http://smuts.noip.me:8090/admin/user', user, options).map((response: Response) => response.json());
   }
 
@@ -53,7 +53,7 @@ export class AdminService {
     var pw = localStorage.getItem('password');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
-    let options = new RequestOptions({ headers: headers});
+    let options = new RequestOptions({ headers: headers });
     return this.http.post('http://smuts.noip.me:8090/admin/role/add', role, options).map((response: Response) => response.json());
   }
 
@@ -62,7 +62,16 @@ export class AdminService {
     var pw = localStorage.getItem('password');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
-    let options = new RequestOptions({ headers: headers});
+    let options = new RequestOptions({ headers: headers });
     return this.http.post('http://smuts.noip.me:8090/admin/role/update', role, options).map((response: Response) => response.json());
+  }
+
+  addCategory(category: string) {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post('http://smuts.noip.me:8090/admin/category', category, options).map((response: Response) => response.json());
   }
 }
