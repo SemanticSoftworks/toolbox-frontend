@@ -18,10 +18,8 @@ export class AddComponent {
   constructor(private router: Router, private http:Http, private adService: AdService) {}
 
   add(username: number, category: number, title: string, description: string) {
-    //Get logged in user and use its id in ad, Not implemented
-    //this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-    let ad: Ad = ({adId: -1, userId: 1, title: title, description: description, category: category, date: null, photosId: null});
+    let ad: Ad = ({adId: -1, userId: this.currentUser.id, title: title, description: description, category: category, date: null, photosId: null});
     this.adService.createAd(ad).subscribe(ads => {
       console.log("getting ads");
       console.log(ads);
