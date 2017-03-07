@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+  <div id="body">
+    <div>
+      <div>
+        <div>
+          <div>
+            <form>
+              <!-- Should submit logged in user automatically -->
+              <input #username type="user" placeholder="Username" >
+              <!-- should get a list of categories -->
+              <input #category type="category" placeholder="Category" >
+              <input #title type="title" placeholder="Title" >
+              <input #description type="description" placeholder="Description" >
+              <input type="button" (click)=add(username.value,category.value,title.value,description.value) value="Create">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

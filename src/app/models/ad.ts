@@ -4,10 +4,11 @@
 
 export class Ad {
   adId:number;
-  user:number;
-  category:string;
+  userId:number;
+  category:number;
   title:string;
   description:string;
-  duration:string;
+  date:string;
+  photosId:number[];
 
 }
