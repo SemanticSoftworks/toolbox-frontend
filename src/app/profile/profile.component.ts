@@ -13,33 +13,17 @@ import {Router} from "@angular/router";
 })
 
 export class ProfileComponent implements OnInit{
-  currentUser: User;
   model: any = {};
   edit: boolean;
 
   constructor(private userService: UserService,private router: Router) {
-    //Should not be in here if not logged in.
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
-
+    this.model = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   updateProfile() {
-    this.model.username = this.currentUser.username;
-    if(this.model.firstname == null) {
-      this.model.firstname = this.currentUser.firstname;
-    }
-    if(this.model.lastname == null) {
-      this.model.lastname = this.currentUser.lastname;
-    }
-    if(this.model.email == null) {
-      this.model.email = this.currentUser.email;
-    }
-    if(this.model.password == null) {
-      this.model.password = this.currentUser.password;
-    }
     this.userService.updateUser(this.model).subscribe(
       data => {
         localStorage.setItem('currentUser', JSON.stringify(data));

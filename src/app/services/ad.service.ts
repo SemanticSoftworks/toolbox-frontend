@@ -6,7 +6,6 @@ import {Ad} from "../models/ad";
 @Injectable()
 export class AdService {
     constructor(private http: Http) {
-        console.log("ads service initialized");
     }
 
     getAds() {
