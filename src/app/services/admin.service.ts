@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map'
 import {Role} from "../models/role";
+import {Category} from "../models/category";
 
 @Injectable()
 export class AdminService {
@@ -73,5 +74,23 @@ export class AdminService {
     headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://smuts.noip.me:8090/admin/category', category, options).map((response: Response) => response.json());
+  }
+
+  getCategories() {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
+    let headers = new Headers();
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get('http://smuts.noip.me:8090/admin/category', options).map(res => res.json())
+  }
+
+  updateCategory(category: Category) {
+    var name = JSON.parse(localStorage.getItem('currentUser')).username;
+    var pw = localStorage.getItem('password');
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Authorization', "Basic " + btoa(name + ':' + pw));
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post('http://smuts.noip.me:8090/admin/category/update', category, options).map((response: Response) => response.json());
   }
 }

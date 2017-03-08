@@ -5,6 +5,7 @@ import {User} from "../models/user";
 import {AdService} from "../services/ad.service";
 import {Ad} from "../models/ad";
 import {Role} from "../models/role";
+import {Category} from "../models/category";
 
 @Component({
   selector: 'profile-root',
@@ -22,6 +23,7 @@ export class AdminComponent implements OnInit{
   addUser: boolean;
   roles: Role[];
   ads: Ad[];
+  categories: Category[];
   addRole: boolean;
   updateRole: boolean;
   addCategory: boolean;
@@ -53,6 +55,11 @@ export class AdminComponent implements OnInit{
         .subscribe(ads => {
           console.log(ads);
           this.ads = ads;
+        });
+      this.adminService.getCategories()
+        .subscribe(categories => {
+          console.log(categories);
+          this.categories = categories;
         });
       this.isUsers = false;
     } else {
@@ -146,6 +153,24 @@ export class AdminComponent implements OnInit{
   toggleUpdateCategory() {
     this.updateCategory = !this.updateCategory;
     this.addCategory = false;
+  }
+
+  updateExistingCategory() {
+    if(this.model.selectedcategory == null) {
+      alert("Select a category");
+    } else {
+      for(var i = 0;i < this.categories.length;i++) {
+        if(this.categories[i].name === this.model.selectedcategory) {
+          this.categories[i].name = this.model.updatecategory;
+          this.adminService.updateCategory(this.categories[i])
+            .subscribe(category => {
+              this.toggleUpdateCategory();
+              window.location.href = '/admin/ads';
+            });
+          break;
+        }
+      }
+    }
   }
 
   ngOnDestroy() {
